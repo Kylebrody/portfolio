@@ -13,6 +13,7 @@
 	function setup() {
 		createCanvas(windowWidth, windowHeight);
 		background('#fae');
+		angleMode(DEGREES);
 	}
 
 
@@ -33,16 +34,16 @@
 	    noStroke();
 	  }
 
-	  for (var i = 0; i < 200; i++){
-	  	ellipse(mouseX, mouseY, 8, 8);
-	  	//ellipse(mouseX - i, mouseY - i, 80, 80);
-	  	ellipse(mouseX + i, mouseY + i, 8, 8);
+	  for (var i = 0; i < 2000; i++){
+	  	rotate(100);
+	  	ellipse(mouseX, mouseY, 50, 8);
+	  	ellipse(mouseX + i, mouseY + i, 50, 8);
 		}
 
-	  for (var i = 200; i > 200; i--){
-	  	ellipse(mouseX, mouseY, 8, 8);
-	  	//ellipse(mouseX - i, mouseY - i, 80, 80);
-	  	ellipse(mouseX + i, mouseY + i, 8, 8);
+	  for (var i = 200; i > 2000; i--){
+	  	rotate(50);
+	  	ellipse(mouseX, mouseY, 50, 8);
+	  	ellipse(mouseX + i, mouseY + i, 50, 8);
 		}
 
 
