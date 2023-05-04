@@ -11,12 +11,12 @@
 	var a;
 
 	function setup() {
-	  createCanvas(windowWidth, windowHeight);
-	  background('#fae');
+		createCanvas(windowWidth, windowHeight);
+		background('#fae');
 	}
 
-	function draw() {
 
+	function draw() {
 	  r = random(255); 
 	  g = random(100,200); 
 	  b = random(100); 
@@ -33,7 +33,18 @@
 	    noStroke();
 	  }
 
-	  ellipse(mouseX, mouseY, 80, 80);
+	  for (var i = 0; i < 200; i++){
+	  	ellipse(mouseX, mouseY, 8, 8);
+	  	//ellipse(mouseX - i, mouseY - i, 80, 80);
+	  	ellipse(mouseX + i, mouseY + i, 8, 8);
+		}
+
+	  for (var i = 200; i > 200; i--){
+	  	ellipse(mouseX, mouseY, 8, 8);
+	  	//ellipse(mouseX - i, mouseY - i, 80, 80);
+	  	ellipse(mouseX + i, mouseY + i, 8, 8);
+		}
+
 
 	}
 	</script>
