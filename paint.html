@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+	<script type="text/javascript">
+	let brushSize = 20;
+	let brushColors = ['#000000', '#ff0000', '#00ff00', '#0000ff', '#ffffff'];
+	let brushColorIndex = 0;
+
+	function setup() {
+  		createCanvas(windowWidth, windowHeight);
+  		background(255);
+	}
+
+	function draw() {
+  	if (mouseIsPressed && mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
+    	fill(brushColors[brushColorIndex]);
+    	noStroke();
+    	ellipse(mouseX, mouseY, brushSize, brushSize);
+  	}
+	}
+
+	function keyPressed() {
+  		if (key == 'r') {
+    		brushColorIndex = 1; // set brush color to red
+  		} 
+  		else if (key == 'g') {
+    		brushColorIndex = 2; // set brush color to green
+  		} 
+  		else if (key == 'b') {
+    		brushColorIndex = 3; // set brush color to blue
+  		} 
+  		else if (key == 'x') {
+    		brushColorIndex = 0; // set brush color to black
+  		} 
+  		else if (key == 'e') {
+    		brushColorIndex = 4; // set brush to white (eraser)
+  		} 
+  		else if (key == 'n') {
+    		brushColorIndex = (brushColorIndex + 1) % brushColors.length; // cycle through available colors
+  		} 
+  		else if (key == '+') {
+    		brushSize += 5; // increase brush size
+  		} 
+  		else if (key == '-') {
+    		brushSize -= 5; // decrease brush size
+  		} 
+  		else if (key == 'c') {
+    		background(255); // clear canvas
+ 		}
+	}
+		
+	</script>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
